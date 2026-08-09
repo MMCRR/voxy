@@ -22,11 +22,11 @@ jobs:
           cache-cleanup: always
 
       - name: Gradle build
-        run: ./gradlew build
+        run: ./gradlew buildAndCollect
 
       - name: Upload artifact
         uses: actions/upload-artifact@v7
         with:
           name: voxy-artifacts
-          path: build/libs/*.jar
-          archive: false
+          path: build/libs/
+          archive: true
